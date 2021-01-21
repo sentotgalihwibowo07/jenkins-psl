@@ -10,6 +10,7 @@ def main(script) {
    sprebuild = new prebuild()
    sbuild= new build()
    spostbuild = new postbuild()
+   sdeploy = new deploy()
  
    // Pipeline specific variable get from injected env
    // Mandatory variable will be check at details & validation steps
@@ -53,6 +54,11 @@ def main(script) {
        stage('Merge') {
            spostbuild.merge(p)
        }
+
+       stage('Deploy') {
+           sdeploy.deploy(p)
+       }
+
 
 
  
