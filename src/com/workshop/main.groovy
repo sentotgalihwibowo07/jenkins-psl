@@ -69,25 +69,10 @@ def main(script) {
            spostdeploy.healthcheck(p)
        }
 
+       stage('Delete Old Image'){
+           spostdeploy.deleteOldImage(p)
+       }
 
-        
-
- 
-       //stage('Build & Push Image') {
-           // TODO: Call build & push image function
-       //}
- 
-       //stage('Merge') {
-           // TODO: Call merge function
-       //}
- 
-       //stage('Deploy') {
-           // TODO: Call deploy function
-       //}
- 
-       //stage('Service Healthcheck') {
-           // TODO: Call healthcheck function
-       //}
    }
 }
  
