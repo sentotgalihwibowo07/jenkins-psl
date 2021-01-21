@@ -9,6 +9,7 @@ def main(script) {
    c = new Config()
    sprebuild = new prebuild()
    sbuild= new build()
+   spostbuild = new postbuild()
  
    // Pipeline specific variable get from injected env
    // Mandatory variable will be check at details & validation steps
@@ -48,6 +49,11 @@ def main(script) {
        stage('Build & Push Image') {
            sbuild.build(p)
        }
+
+       stage('Merge') {
+           spostbuild.merge(p)
+       }
+
 
  
        //stage('Build & Push Image') {
